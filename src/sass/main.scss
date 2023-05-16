@@ -1,0 +1,486 @@
+@use './variables'as *;
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 42px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+h1 {
+    font-size: 3.3rem;
+    color: #efefef;
+}
+
+h3 {
+    margin-bottom: 3.2rem;
+    font-size: 2.8rem;
+    text-align: center;
+}
+
+p {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 150%;
+}
+
+a,
+button {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+table {
+    font-family: 'Source Sans Pro', sans-serif;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+
+
+
+///////////////////          NAWIGACJA          /////////////////// 
+
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: $primary-color;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+    height: 52px;
+
+    &::after {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 79px;
+        height: 79px;
+        border-radius: 50%;
+        background-color: $primary-color;
+        // background-color: rgb(255, 255, 255);
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        height: 100%;
+    }
+
+    &__link {
+        text-align: center;
+        padding: 1rem;
+        min-width: 94px;
+        color: #fefefe;
+        font-size: 1.8rem;
+        text-decoration: none;
+        transition: opacity .3s;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:first-child {
+            margin-right: 5%;
+        }
+
+        &:last-child {
+            margin-left: 5%;
+        }
+    }
+
+    &__link-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: start;
+        min-width: none;
+        width: 80px;
+        height: 80px;
+        border: 3px solid $secondary-color;
+        border-radius: 50%;
+        overflow: hidden;
+        transition: opacity .3s;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__logo {
+        width: 130%;
+    }
+}
+
+
+
+
+///////////////////          HERO          /////////////////// 
+
+.hero {
+    position: relative;
+    z-index: 0;
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+    background-image: url('../img/hero_640.jpg');
+    background-size: cover;
+    background-position: 24% 50%;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, .3);
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__h1 {
+        margin-bottom: 2.4rem;
+        text-align: center;
+        text-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+
+        &--span {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__img {
+        width: 62.5%;
+        width: 200px;
+        border: 2px solid $secondary-color;
+    }
+}
+
+
+
+
+///////////////////          CENNIK          /////////////////// 
+
+.prices {
+    padding-top: 6.4rem;
+    margin-bottom: 6.4rem;
+
+    &__h3 {
+        color: $black;
+        text-shadow: 0 4px 4px rgba(0, 0, 0, .05);
+    }
+
+    &__table {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.6rem;
+    }
+
+    &__table-row {
+        border-bottom: 1px dashed $black10;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__table-cell {
+        padding: 0.8rem;
+
+        &:first-child {
+            padding-right: 3.2rem;
+        }
+
+        &:last-child {
+            font-weight: bold;
+            min-width: 66px;
+        }
+    }
+}
+
+
+
+
+///////////////////          KONTAKT          /////////////////// 
+
+.contact {
+    padding-top: 6.4rem;
+    padding-bottom: 3.2rem;
+    background-image: $primary-gradient;
+
+    &__h3 {
+        margin-bottom: 3.2rem;
+        color: #fff;
+        text-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    }
+
+    &__column {
+        margin-top: 3.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:first-of-type {
+            margin-bottom: 5.6rem;
+        }
+    }
+
+    &__column-title {
+        margin-bottom: 4rem;
+        padding: 0.4rem 2rem;
+        color: #fff;
+        font-size: 2.7rem;
+        font-weight: bold;
+        border: 2px solid $secondary-color;
+        background-color: #efefef;
+        color: $black;
+        width: 212px;
+        width: 70%;
+        max-width: 270px;
+        text-align: center;
+    }
+
+    &__column-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3.2rem;
+    }
+
+    &__icon-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.8rem;
+        border-radius: 4px;
+        width: 40px;
+        height: 40px;
+        background-color: $primary-color;
+    }
+
+    &__paragraph {
+        font-size: 1.8rem;
+        // margin-bottom: 0.4rem;
+        color: #efefef;
+        line-height: 150%;
+    }
+
+    &__table {
+        font-size: 1.8rem;
+        color: #efefef;
+        line-height: 31px;
+    }
+
+    &__table-cell {
+        &:first-child {
+            padding-right: 3.2rem;
+        }
+
+        &:last-child {
+            font-weight: 700;
+            text-align: center;
+        }
+    }
+
+    &__booksy-link {
+        margin-top: 0.8rem;
+        padding: 1rem 2rem;
+        border-radius: 16px;
+        background-color: #02CFA7;
+        transition: opacity .3s;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__booksy-img {
+        width: 120px;
+    }
+}
+
+
+
+
+///////////////////          FOOTER          /////////////////// 
+
+.footer {
+    background-color: $primary-color;
+
+    &__paragraph {
+        padding: 1.7rem 0;
+        color: #bdbdbd;
+        font-size: 1.4rem;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////
+
+@media (min-width: 560px) {
+    html {
+        scroll-padding-top: 54px;
+    }
+
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    h3 {
+        margin-bottom: 4rem;
+        font-size: 3.1rem;
+    }
+
+    .container {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    ///////////////////          NAWIGACJA          /////////////////// 
+
+    .navbar {
+        height: 64px;
+
+        &::after {
+            width: 99px;
+            height: 99px;
+        }
+
+        &__link {
+            font-size: 2rem;
+            min-width: 102px;
+
+            &:first-child {
+                margin-right: 3.8rem;
+            }
+
+            &:last-child {
+                margin-left: 3.8rem;
+            }
+        }
+
+        &__link-img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+
+    ///////////////////          HERO          /////////////////// 
+
+    .hero {
+        padding-top: 8.8rem;
+        padding-bottom: 8.8rem;
+        background-image: url('../img/hero_1280.jpg');
+
+        &__img {
+            border-width: 3px;
+            width: 314px;
+        }
+    }
+
+    ///////////////////          CENNIK          /////////////////// 
+
+    .prices {
+        padding-top: 7.2rem;
+        margin-bottom: 7.2rem;
+
+                &__table {
+            width: 498px;
+            font-size: 1.8rem;
+        }
+
+        &__table-cell {
+            padding-top: 1.2rem;
+            padding-bottom: 1.2rem;
+
+            &:first-child {
+                padding-right: 4rem;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// 680px
+
+// &__wrapper {
+//     display: flex;
+// }
+
+// &__img-bar {
+//     flex-grow: 1;
+//     background-image: url('../img/prices-bar_640.jpg');
+//     background-size: cover;
+//     background-position: 57% 50%;
+
+//     &:first-child {
+//         margin-right: 4rem;
+//     }
+
+//     &:last-child {
+//         margin-left: 4rem;
+//         transform: scaleX(-1);
+//     }
+// }
