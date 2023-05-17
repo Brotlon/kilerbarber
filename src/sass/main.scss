@@ -31,8 +31,8 @@ h6 {
 }
 
 h1 {
-    font-size: 3.3rem;
     color: #efefef;
+    font-size: 3.3rem;
 }
 
 h3 {
@@ -78,9 +78,9 @@ table {
     top: 0;
     left: 0;
     z-index: 9999;
+    height: 52px;
     background-color: $primary-color;
     box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
-    height: 52px;
 
     &::after {
         content: '';
@@ -106,11 +106,11 @@ table {
     }
 
     &__link {
-        text-align: center;
         padding: 1rem;
         min-width: 94px;
         color: #fefefe;
         font-size: 1.8rem;
+        text-align: center;
         text-decoration: none;
         transition: opacity .3s;
 
@@ -236,8 +236,8 @@ table {
         }
 
         &:last-child {
-            font-weight: bold;
             min-width: 66px;
+            font-weight: bold;
         }
     }
 }
@@ -258,11 +258,15 @@ table {
         text-shadow: 0 4px 4px rgba(0, 0, 0, .25);
     }
 
+    &__img-bar {
+        display: none;
+    }
+
     &__column {
-        margin-top: 3.2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 3.2rem;
 
         &:first-of-type {
             margin-bottom: 5.6rem;
@@ -272,15 +276,13 @@ table {
     &__column-title {
         margin-bottom: 4rem;
         padding: 0.4rem 2rem;
-        color: #fff;
-        font-size: 2.7rem;
-        font-weight: bold;
         border: 2px solid $secondary-color;
-        background-color: #efefef;
-        color: $black;
-        width: 212px;
         width: 70%;
         max-width: 270px;
+        background-color: #efefef;
+        color: $black;
+        font-size: 2.7rem;
+        font-weight: bold;
         text-align: center;
     }
 
@@ -303,15 +305,14 @@ table {
     }
 
     &__paragraph {
-        font-size: 1.8rem;
-        // margin-bottom: 0.4rem;
         color: #efefef;
+        font-size: 1.8rem;
         line-height: 150%;
     }
 
     &__table {
-        font-size: 1.8rem;
         color: #efefef;
+        font-size: 1.8rem;
         line-height: 31px;
     }
 
@@ -387,6 +388,7 @@ table {
         padding-right: 3rem;
     }
 
+
     ///////////////////          NAWIGACJA          /////////////////// 
 
     .navbar {
@@ -398,8 +400,8 @@ table {
         }
 
         &__link {
-            font-size: 2rem;
             min-width: 102px;
+            font-size: 2rem;
 
             &:first-child {
                 margin-right: 3.8rem;
@@ -430,13 +432,14 @@ table {
         }
     }
 
+
     ///////////////////          CENNIK          /////////////////// 
 
     .prices {
         padding-top: 7.2rem;
         margin-bottom: 7.2rem;
 
-                &__table {
+        &__table {
             width: 498px;
             font-size: 1.8rem;
         }
@@ -450,37 +453,380 @@ table {
             }
         }
     }
+
+
+    ///////////////////          KONTAKT          /////////////////// 
+
+    .contact {
+        padding-top: 7.2rem;
+        padding-bottom: 5.6rem;
+
+        &__h3 {
+            margin-bottom: 4rem;
+        }
+
+        &__row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__img-bar {
+            background-size: cover;
+            background-position: center;
+
+            &:nth-of-type(3) {
+                display: block;
+                flex-grow: 1;
+                margin-right: 3rem;
+                margin-left: 3rem;
+                background-image: url('../img/contact_bar_3_1280.jpg');
+            }
+        }
+
+        &__column {
+            margin-top: 2.4rem;
+
+            &:first-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__column-title {
+            margin-bottom: 4.8rem;
+            width: 80%;
+            max-width: none;
+        }
+
+        &__column-box {
+            margin-bottom: 4rem;
+
+            &:last-child {
+                margin-bottom: 2.4rem;
+            }
+        }
+
+        &__icon-box {
+            margin-bottom: 1.6rem;
+        }
+
+        &__paragraph {
+            line-height: 30px;
+        }
+
+        &__table-cell {
+            &:first-child {
+                padding-right: 2.4rem;
+            }
+        }
+    }
 }
 
 
 
 
+//////////////////////////////////////////////
+
+@media (min-width: 680px) {
+
+    ///////////////////          CENNIK          /////////////////// 
+
+    .prices {
+        &__wrapper {
+            display: flex;
+        }
+
+        &__img-bar {
+            flex-grow: 1;
+            background-image: url('../img/prices-bar_640.jpg');
+            background-size: cover;
+            background-position: 57% 50%;
+
+            &:first-child {
+                margin-right: 4rem;
+            }
+
+            &:last-child {
+                margin-left: 4rem;
+                transform: scaleX(-1);
+            }
+        }
+    }
+
+
+    ///////////////////          KONTAKT          /////////////////// 
+
+    .contact {
+        padding-bottom: 7.2rem;
+
+        &__column {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+}
 
 
 
 
+//////////////////////////////////////////////
+
+@media (min-width: 820px) {
+    html {
+        scroll-padding-top: 70px;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    h3 {
+        font-size: 3.5rem;
+    }
+
+    .container {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+
+    ///////////////////          NAWIGACJA          /////////////////// 
+
+    .navbar {
+        height: 80px;
+
+        &::after {
+            width: 119px;
+            height: 119px;
+        }
+
+        &__link {
+            min-width: 118px;
+            font-size: 2.4rem;
+
+            &:first-child {
+                margin-right: 5.4rem;
+            }
+
+            &:last-child {
+                margin-left: 5.4rem;
+            }
+        }
+
+        &__link-img {
+            width: 120px;
+            height: 120px;
+        }
+    }
+
+
+    ///////////////////          HERO          /////////////////// 
+
+    .hero {
+        padding-top: 9.6rem;
+        padding-bottom: 9.6rem;
+
+        &__img {
+            width: 340px;
+        }
+    }
+
+
+    ///////////////////          CENNIK          /////////////////// 
+
+    .prices {
+        padding-top: 8rem;
+        margin-bottom: 8rem;
+
+        &__table {
+            width: auto;
+            font-size: 2rem;
+        }
+
+        &__table-cell {
+            padding-top: 1.4rem;
+            padding-bottom: 1.4rem;
+        }
+    }
+
+
+    ///////////////////          KONTAKT          /////////////////// 
+
+    .contact {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+
+        &__img-bar {
+            &:nth-of-type(3) {
+                margin: 0;
+            }
+        }
+
+        &__column {
+            padding-right: 4rem;
+            padding-left: 4rem;
+        }
+
+        &__paragraph {
+            font-size: 2rem;
+            line-height: 32px;
+        }
+
+        &__table {
+            font-size: 2rem;
+            line-height: 32px;
+        }
+    }
+
+
+    ///////////////////          FOOTER          /////////////////// 
+
+    .footer {
+        &__paragraph {
+            padding-top: 1.8rem;
+            padding-bottom: 1.8rem;
+            font-size: 1.6rem;
+        }
+    }
+}
 
 
 
 
-// 680px
+//////////////////////////////////////////////
 
-// &__wrapper {
-//     display: flex;
-// }
+@media (min-width: 920px) {
 
-// &__img-bar {
-//     flex-grow: 1;
-//     background-image: url('../img/prices-bar_640.jpg');
-//     background-size: cover;
-//     background-position: 57% 50%;
+    ///////////////////          KONTAKT          /////////////////// 
 
-//     &:first-child {
-//         margin-right: 4rem;
-//     }
+    .contact {
+        &__img-bar {
+            &:nth-of-type(1) {
+                display: block;
+                flex-grow: 1;
+                margin-top: 2.4rem;
+                margin-bottom: 2.4rem;
+                background-image: url('../img/contact_bar_1_1280.jpg');
+            }
 
-//     &:last-child {
-//         margin-left: 4rem;
-//         transform: scaleX(-1);
-//     }
-// }
+            &:nth-of-type(5) {
+                display: block;
+                flex-grow: 1;
+                margin-top: 2.4rem;
+                margin-bottom: 2.4rem;
+                background-image: url('../img/contact_bar_2_1280.jpg');
+            }
+        }
+
+        &__column-title {
+            width: 100%;
+            max-width: none;
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////
+
+@media (min-width: 1300px) {
+    html {
+        scroll-padding-top: 62px;
+    }
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    h3 {
+        margin-bottom: 4.8rem;
+        font-size: 4.1rem;
+    }
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        max-width: 1300px;
+    }
+
+
+    ///////////////////          HERO          /////////////////// 
+
+    .hero {
+        padding-top: 10.4rem;
+        padding-bottom: 10.4rem;
+        background-image: url('../img/hero_1920.jpg');
+
+        &__img {
+            width: 366px;
+        }
+    }
+
+
+    ///////////////////          CENNIK          /////////////////// 
+
+    .prices {
+        padding-top: 9.6rem;
+        margin-bottom: 9.6rem;
+
+        &__table {
+            font-size: 2.4rem;
+        }
+
+        &__img-bar {
+            &:first-child {
+                margin-right: 6.4rem;
+            }
+
+            &:last-child {
+                margin-left: 6.4rem;
+            }
+        }
+
+        &__table-cell {
+            &:first-child {
+                padding-right: 5.6rem;
+            }
+        }
+    }
+
+
+    ///////////////////          KONTAKT          /////////////////// 
+
+    .contact {
+        padding-top: 9.6rem;
+        padding-bottom: 9.6rem;
+
+        &__column {
+            padding-right: 6.4rem;
+            padding-left: 6.4rem;
+        }
+
+        &__column-title {
+            font-size: 3rem;
+        }
+
+        &__paragraph {
+            font-size: 2.4rem;
+            line-height: 150%;
+        }
+
+        &__table {
+            font-size: 2.4rem;
+            line-height: 38px;
+        }
+    }
+
+
+    ///////////////////          FOOTER          /////////////////// 
+
+    .footer {
+        &__paragraph {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+    }
+}
